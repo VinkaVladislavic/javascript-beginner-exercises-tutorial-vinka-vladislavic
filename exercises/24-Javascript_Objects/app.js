@@ -16,15 +16,23 @@ var person2 = {
     significantOther: person
 };
 
+var person3 = new Persona('Jimmy','Doe',13,'male',[1,2,3,4], null);
 var family = {
     lastName: "Doe",
-    members: [person, person2]   //Array of objects, don't forget to add Jimmy
+    members: [person, person2, person3]   //Array of objects, don't forget to add Jimmy
 };
 
 
 function addAllFamilyLuckyNumbers(anArray){
   let sumOfAllLuckyNumbers = 0; //sumOfAllLuckyNumbers is a number, the sum of all lucky numbers.
+    for(let i=0; i<anArray.length; i++) {
+        if(anArray[i].luckyNumbers) {
+            for(let j=0; j<anArray[i].luckyNumbers.length; j++){
+                sumOfAllLuckyNumbers += anArray[i].luckyNumbers[j];
+            }
 
+        }
+    }
   //To-Do: loop and add; consider nested loops
   //Hint: use the anArray variable to get all of the lucky numbers
   
@@ -32,6 +40,16 @@ function addAllFamilyLuckyNumbers(anArray){
 }
 
 //Enter all your code here:
+person.luckyNumbers[3] = 33;
+
+function Persona(name1, lastName1, age1, gender1, luckyNumbers1, significantOther1) {
+    this.name = name1;
+    this.lastName = lastName1;
+    this.age = age1;
+    this.gender = gender1;
+    this.luckyNumbers = luckyNumbers1;
+    this.significantOther = significantOther1;
+}
 
 
 //Do not make changes below:
